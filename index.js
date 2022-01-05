@@ -20,6 +20,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 //connection test
 async function run() {
 
+
      try{
 
           await client.connect();
@@ -37,6 +38,7 @@ async function run() {
                const results = await cursor.toArray()
                res.send(results);
           });
+
 
           //GET APPI DATA WITH ID
           app.get('/products/:id', async(req, res)=>{
@@ -135,7 +137,7 @@ async function run() {
 
      }
      finally{
-          //  await client.close();
+         
      }
 }
 run().catch(console.dir);
